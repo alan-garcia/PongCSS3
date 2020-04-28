@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong en CSS3</title>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div class="ball"></div>
+
+		<div class="player1-area">
+			<div class="score-player1">0</div>
+			<div class="player1"></div>
+		</div>
+
+		<div class="player2-area">
+			<div class="score-player2">0</div>
+			<div class="player2"></div>
+    </div>
+    
+    <script>
+      let ballDiv = document.querySelector(".ball");
+      let scorePlayer2Div = document.querySelector(".score-player2");
+      
+      ballDiv.addEventListener("animationend", function() {
+        scorePlayer2Div.innerHTML = "1";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "Geostar Fill";
+  src: url("../fonts/GeostarFill-Regular.ttf"); }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #333; }
+
+.player1-area,
+.player2-area {
+  border-top: 4px dashed #fff;
+  border-bottom: 4px dashed #fff;
+  float: left;
+  height: 400px;
+  width: 400px; }
+
+.player1-area {
+  border-right: 6px dashed #fff;
+  border-left: 4px dashed #fff; }
+
+.player2-area {
+  border-right: 4px dashed #fff; }
+
+.player1,
+.player2 {
+  background: #fff;
+  height: 100px;
+  position: relative;
+  top: 80px;
+  width: 14px; }
+
+.player1 {
+  left: 25px;
+  animation: player1bar 16s linear; }
+
+.player2 {
+  left: 355px;
+  animation: player2bar 24s linear; }
+
+.score-player1,
+.score-player2 {
+  color: #fff;
+  font-family: 'Geostar Fill', Wallpoet, 'Stalinist One', sans-serif;
+  font-size: 5em;
+  height: 90px;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  width: 135px; }
+
+.score-player1 {
+  left: 55%; }
+
+.score-player2 {
+  left: 10%; }
+
+.ball {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  height: 20px;
+  left: 395px;
+  position: absolute;
+  top: 200px;
+  visibility: hidden;
+  width: 20px;
+  animation: ball 13s linear; }
+
+@keyframes ball {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  10% {
+    transform: translate3d(-355px, 100px, 0); }
+  15% {
+    transform: translate3d(-200px, 180px, 0); }
+  20% {
+    transform: translate3d(-20px, 110px, 0); }
+  30% {
+    transform: translate3d(355px, -110px, 0); }
+  40% {
+    transform: translate3d(-100px, -200px, 0); }
+  50% {
+    transform: translate3d(-355px, -100px, 0); }
+  70% {
+    transform: translate3d(200px, 180px, 0); }
+  80% {
+    transform: translate3d(345px, 80px, 0); }
+  90% {
+    transform: translate3d(-210px, -200px, 0); }
+  100% {
+    transform: translate3d(-600px, 200px, 0); } }
+
+@keyframes player1bar {
+  0% {
+    transform: translate3d(0, 0, 0); }
+  10% {
+    transform: translate3d(0, 100px, 0); }
+  15% {
+    transform: translate3d(0, 60px, 0); }
+  30% {
+    transform: translate3d(0, 40px, 0); }
+  40% {
+    transform: translate3d(0, -150px, 0); }
+  50%, 70% {
+    transform: translate3d(0, 40px, 0); }
+  75% {
+    transform: translate3d(0, -150px, 0); }
+  82% {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes player2bar {
+  0% {
+    transform: translate3d(0, 0, 0); }
+  10% {
+    transform: translate3d(0, 100px, 0); }
+  15% {
+    transform: translate3d(0, -90px, 0); }
+  30% {
+    transform: translate3d(0, 0, 0); }
+  40%, 50% {
+    transform: translate3d(0, 100px, 0); }
+  51% {
+    transform: translate3d(0, 0, 0); } }
