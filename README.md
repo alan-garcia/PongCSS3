@@ -1,2 +1,3 @@
 # Animación Pong CSS3
-Implementación de animación preestablecida del juego **Pong** con CSS3.
+
+Preset CSS3 animation from **Pong** style game.
