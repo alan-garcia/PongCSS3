@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="ball"></div>
+    <button type="button" class="startButton">Start animation</button>
 		
 		<div class="player1-area">
 			<div class="score-player1">0</div>
@@ -20,11 +21,26 @@
 		</div>
     
     <script>
-      let ballDiv = document.querySelector(".ball");
+      let player1 = document.querySelector(".player1");
+      let player2 = document.querySelector(".player2");
+      let ball = document.querySelector(".ball");
       let scorePlayer2Div = document.querySelector(".score-player2");
-      
-      ballDiv.addEventListener("animationend", function() {
+      let startButton = document.querySelector(".startButton");
+
+      startButton.addEventListener("click", function(e) {
+        scorePlayer2Div.innerHTML = "0";
+        player1.classList.add("player1-animation");
+        player2.classList.add("player2-animation");
+        ball.classList.add("ball-animation");
+        startButton.style.display = "none";
+      });
+
+      ball.addEventListener("animationend", function() {
         scorePlayer2Div.innerHTML = "1";
+        player1.classList.remove("player1-animation");
+        player2.classList.remove("player2-animation");
+        ball.classList.remove("ball-animation");
+        startButton.style.display = "block";
       });
     </script>
   </body>
