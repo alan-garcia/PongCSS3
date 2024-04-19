@@ -1,5 +1,5 @@
-# Pong CSS3 preset animation
+# Animación preestablecida del juego "Pong" con CSS3
 
-Preset CSS3 animation from **Pong** style game.
+Implementación de animación preestablecida del estilo juego "Pong" con CSS3.
 
 Link: https://pong-css3-animation.netlify.app/
