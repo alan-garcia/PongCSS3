@@ -3,28 +3,54 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pong en CSS3</title>
+    <title>Pong CSS3 preset animation</title>
     <link rel="stylesheet" href="css/main.css"/>
   </head>
   <body>
-    <div class="ball"></div>
-		
-		<div class="player1-area">
-			<div class="score-player1">0</div>
-			<div class="player1"></div>
-		</div>
+    <div class="game">
+      <div class="court">
+        <div class="scoreboard">
+          <div class="score-player1">0</div>
+          <div class="score-player2">0</div>
+        </div>
 
-		<div class="player2-area">
-			<div class="score-player2">0</div>
-			<div class="player2"></div>
-		</div>
+        <div class="paddle player1"></div>
+        <div class="paddle player2"></div>
+        <div class="ball"></div>
+      </div>
+
+      <button class="startButton">Start</button>
+    </div>
     
     <script>
-      let ballDiv = document.querySelector(".ball");
-      let scorePlayer2Div = document.querySelector(".score-player2");
-      
-      ballDiv.addEventListener("animationend", function() {
-        scorePlayer2Div.innerHTML = "1";
+      const ball = document.querySelector('.ball');
+      const player1 = document.querySelector('.player1');
+      const player2 = document.querySelector('.player2');
+      const score1 = document.querySelector('.score-player1');
+      const score2 = document.querySelector('.score-player2');
+      const button = document.querySelector('.startButton');
+
+      button.addEventListener('click', () => {
+        score1.textContent = '0';
+        score2.textContent = '0';
+
+        ball.classList.add('ball-animation');
+        player1.classList.add('player1-animation');
+        player2.classList.add('player2-animation');
+
+        button.disabled = true;
+        button.textContent = 'Playing...';
+      });
+
+      ball.addEventListener('animationend', () => {
+        score2.textContent = '1';
+
+        ball.classList.remove("ball-animation");
+        player1.classList.remove("player1-animation");
+        player2.classList.remove("player2-animation");
+        
+        button.disabled = false;
+        button.textContent = 'Start Again';
       });
     </script>
   </body>
